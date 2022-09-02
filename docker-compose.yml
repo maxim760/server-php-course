@@ -3,13 +3,9 @@ version: "3"
 services:
   web:
     build: ./docker/php
-    environment:
-      - ALLOW_OVERRIDE=true
     ports:
       - "80:80"
     depends_on:
-      - db
-    links:
       - db
     volumes:
       - ./app:/var/www/html/
