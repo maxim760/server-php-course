@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  web:
+    build: ./docker/php
+    environment:
+      - ALLOW_OVERRIDE=true
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+    links:
+      - db
+    volumes:
+      - ./app:/var/www/html/
+  db:
+    build: ./docker/mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: appDB
+    ports:
+      - "8889:3306"
