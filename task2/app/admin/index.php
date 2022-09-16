@@ -46,7 +46,7 @@
     <?php
         $res = $admin->exec($_COOKIE["command"] ?: "");
     ?>
-    resEl.textContent = "<?= $res ?>";
+    resEl.textContent = `<?= $res ?>`;
     function onClick(command) {
         document.cookie = `command=${command}`
         window.location.reload();
