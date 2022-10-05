@@ -5,17 +5,19 @@ services:
     build: docker/php
     ports:
       - "80:80"
-    depends_on:
+    links:
       - db
     volumes:
       - ./app:/var/www/html/
   db:
-    build: docker/mariadb
+    image: mariadb
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-      MYSQL_DATABASE: appDB
     ports:
       - "8889:3306"
+    volumes:
+      - db_volume:/var/lib/sql
+      - ./docker/mariadb:/docker-entrypoint-initdb.d
+volumes:
+  db_volume:
