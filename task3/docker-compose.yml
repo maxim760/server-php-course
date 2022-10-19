@@ -13,9 +13,9 @@ services:
     restart: always
     volumes:
       - ./nginx/content:/etc/nginx/html/
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
-      - "8088:80"
+      - "8085:80"
   db:
     image: mariadb
     restart: always
