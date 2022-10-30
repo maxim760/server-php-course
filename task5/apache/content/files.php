@@ -5,6 +5,9 @@ switch ($method) {
     case "POST":
         upload();
         break;
+    default:
+        header('Location: '. "./pdf.php");
+        break;
 }
 function upload() {
     $mysqli = new mysqli("db", "user", "password", "shop");
