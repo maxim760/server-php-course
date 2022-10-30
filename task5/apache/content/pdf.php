@@ -7,7 +7,7 @@
 </head>
 <body>
 <a href="./index.html">На главную</a>
-<form action="files.php" method="post" enctype="multipart/form-data">
+<form id="form">
     Выберите пдф файл
     <input type="file" name="file" accept="application/pdf" id="pdf-input">
     <button type="submit" name="submit" value="Upload">Загрузить</button>
@@ -61,6 +61,23 @@ $result = $mysqli->query("select ID, title from pdfs");
         }
     }
     document.querySelector("#pdf-input").addEventListener("change", onChangeFile)
+    const form = document.getElementById("form")
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault()
+        console.log("form load")
+        try {
+            const formData = new FormData(e.target)
+            console.log(formData)
+            const response = await fetch("./api/pdf.php", {
+                method: "POST",
+                body: formData,
+            })
+            const result = await response.json()
+            window.location.reload()
+        } catch {
+            alert("Ошибка при добавлении")
+        }
+    })
 </script>
 </body>
 </html>

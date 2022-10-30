@@ -36,6 +36,26 @@ switch ($method) {
         }
         break;
     }
+    case "POST": {
+        header('Content-Type:application/json');
+        $isPdf = $_FILES["file"]["type"] == 'application/pdf';
+        if(!$isPdf) {
+            echoError();
+            return;
+        }
+        $tempFile = $_FILES["file"]["tmp_name"];
+        $content = file_get_contents($tempFile);
+        $fileName = $_FILES["file"]["name"] ?: "file.pdf";
+        $insert_sql = "INSERT INTO pdfs (title, pdf) VALUES(\"{$fileName}\", ?);";
+        $statement = mysqli_prepare($connect, $insert_sql);
+        $statement->bind_param("s", $content);
+        $statement->execute();
+        if(mysqli_insert_id($connect) >= 1) {
+            echo json_encode(["id" => mysqli_insert_id($connect)]);
+            return;
+        }
+        echoError();
+    }
     default:
         echoError();
         break;
