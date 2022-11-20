@@ -45,6 +45,10 @@ switch ($method) {
         }
         $tempFile = $_FILES["file"]["tmp_name"];
         $content = file_get_contents($tempFile);
+        if(!str_starts_with(strtolower($content), "%pdf")) {
+            echoError();
+            return;
+        }
         $fileName = $_FILES["file"]["name"] ?: "file.pdf";
         $insert_sql = "INSERT INTO pdfs (title, pdf) VALUES(\"{$fileName}\", ?);";
         $statement = mysqli_prepare($connect, $insert_sql);

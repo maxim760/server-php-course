@@ -64,7 +64,6 @@ $result = $mysqli->query("select ID, title from pdfs");
     const form = document.getElementById("form")
     form.addEventListener("submit", async (e) => {
         e.preventDefault()
-        console.log("form load")
         try {
             const formData = new FormData(e.target)
             console.log(formData)
@@ -72,6 +71,9 @@ $result = $mysqli->query("select ID, title from pdfs");
                 method: "POST",
                 body: formData,
             })
+            if(!response.ok) {
+                throw new Error(response.statusText)
+            }
             const result = await response.json()
             window.location.reload()
         } catch {
