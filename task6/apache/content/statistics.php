@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Statistics</title>
+    <title>Статистика</title>
     <style>span { margin: 10px; }</style>
     <?php require_once '_helper.php'; defineTheme(); ?>
 </head>
 <body>
 <h3>Графики:</h3>
+<div style="margin-bottom: 10px">
+    <a href="./index.html">Назад</a>
+</div>
 <?php
 require '../vendor/autoload.php';
 class Shape {
@@ -34,15 +37,12 @@ $objectSet = $loader->loadData([
     ]
 ]);
 $array = $objectSet->getObjects();
-$size = count($array);
-foreach ($array as $i=>$shape) {
-    echo "<div>";
-    echo "<div>$i/$size</div>";
-    echo "<img style='width: 33.3%' src=\"/graphs.php?type=0&data=$shape\">";
-    echo "<img style='width: 33.3%'  src=\"/graphs.php?type=1&data=$shape\">";
-    echo "<img style='width: 33.3%'  src=\"/graphs.php?type=2&data=$shape\">";
-    echo "</div>";
-}
+$shape = $array["shape8"];
+echo "<div>";
+echo "<img style='width: 33.3%' src=\"/graphs.php?type=0&data=$shape\">";
+echo "<img style='width: 33.3%'  src=\"/graphs.php?type=1&data=$shape\">";
+echo "<img style='width: 33.3%'  src=\"/graphs.php?type=2&data=$shape\">";
+echo "</div>";
 ?>
 </body>
 </html>

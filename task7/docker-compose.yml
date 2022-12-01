@@ -1,0 +1,36 @@
+version: "3"
+services:
+  apache:
+    build: apache
+    restart: always
+    volumes:
+      - ./apache/content:/var/www/html/
+      - ./apache/error.log:/var/log/apache2/error.log
+      - ./apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./apache/php.ini:/usr/local/etc/php/conf.d/40-custom.ini
+    ports:
+      - "8090:80"
+  nginx:
+    image: nginx
+    restart: always
+    volumes:
+      - ./nginx/content:/etc/nginx/html/
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8085:80"
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - db_volume:/var/lib/sql
+      - ./sql:/docker-entrypoint-initdb.d
+    ports:
+      - "3308:3306"
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+volumes:
+  db_volume:
