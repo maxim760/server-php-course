@@ -260,3 +260,49 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 [Thu Dec 01 21:16:31.439633 2022] [dbd:error] [pid 20] (20014)Internal error (specific information not available): AH00633: failed to initialise
 [Thu Dec 01 21:16:31.443904 2022] [dbd:crit] [pid 20] (20014)Internal error (specific information not available): AH00636: child init failed!
 [Thu Dec 01 21:23:14.738633 2022] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.5. Set the 'ServerName' directive globally to suppress this message
+[Thu Dec 01 21:34:35.124557 2022] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.54 (Debian) PHP/8.0.26 configured -- resuming normal operations
+[Thu Dec 01 21:34:35.127374 2022] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Thu Dec 01 21:34:35.128228 2022] [dbd:error] [pid 17] (20014)Internal error (specific information not available): AH00629: Can't connect to mysql: Can't connect to MySQL server on 'db' (115)
+[Thu Dec 01 21:34:35.130678 2022] [dbd:error] [pid 20] (20014)Internal error (specific information not available): AH00629: Can't connect to mysql: Can't connect to MySQL server on 'db' (115)
+[Thu Dec 01 21:34:35.128957 2022] [dbd:error] [pid 18] (20014)Internal error (specific information not available): AH00629: Can't connect to mysql: Can't connect to MySQL server on 'db' (115)
+[Thu Dec 01 21:34:35.132768 2022] [dbd:error] [pid 18] (20014)Internal error (specific information not available): AH00633: failed to initialise
+[Thu Dec 01 21:34:35.130623 2022] [dbd:error] [pid 21] (20014)Internal error (specific information not available): AH00629: Can't connect to mysql: Can't connect to MySQL server on 'db' (115)
+[Thu Dec 01 21:34:35.130724 2022] [dbd:error] [pid 17] (20014)Internal error (specific information not available): AH00633: failed to initialise
+[Thu Dec 01 21:34:35.137630 2022] [dbd:crit] [pid 17] (20014)Internal error (specific information not available): AH00636: child init failed!
+[Thu Dec 01 21:34:35.130842 2022] [dbd:error] [pid 19] (20014)Internal error (specific information not available): AH00629: Can't connect to mysql: Can't connect to MySQL server on 'db' (115)
+[Thu Dec 01 21:34:35.139672 2022] [dbd:error] [pid 19] (20014)Internal error (specific information not available): AH00633: failed to initialise
+[Thu Dec 01 21:34:35.131765 2022] [dbd:error] [pid 20] (20014)Internal error (specific information not available): AH00633: failed to initialise
+[Thu Dec 01 21:34:35.133753 2022] [dbd:crit] [pid 18] (20014)Internal error (specific information not available): AH00636: child init failed!
+[Thu Dec 01 21:34:35.134949 2022] [dbd:error] [pid 21] (20014)Internal error (specific information not available): AH00633: failed to initialise
+[Thu Dec 01 21:34:35.145582 2022] [dbd:crit] [pid 21] (20014)Internal error (specific information not available): AH00636: child init failed!
+[Thu Dec 01 21:34:35.140719 2022] [dbd:crit] [pid 19] (20014)Internal error (specific information not available): AH00636: child init failed!
+[Thu Dec 01 21:34:35.141869 2022] [dbd:crit] [pid 20] (20014)Internal error (specific information not available): AH00636: child init failed!
+[Thu Dec 01 21:37:27.469664 2022] [auth_basic:error] [pid 21] [client 172.19.0.2:37430] AH01618: user 3456 not found: /admin.php, referer: http://localhost:8085/products.php
+[Thu Dec 01 21:37:28.978375 2022] [auth_basic:error] [pid 19] [client 172.19.0.2:37432] AH01618: user 3456 not found: /admin.php, referer: http://localhost:8085/products.php
+[Thu Dec 01 21:37:29.726037 2022] [auth_basic:error] [pid 20] [client 172.19.0.2:37442] AH01618: user 3456 not found: /admin.php, referer: http://localhost:8085/products.php
+[Thu Dec 01 21:37:30.324335 2022] [auth_basic:error] [pid 22] [client 172.19.0.2:37450] AH01618: user 3456 not found: /admin.php, referer: http://localhost:8085/products.php
+[Thu Dec 01 22:57:34.716071 2022] [core:error] [pid 22] [client 172.19.0.2:51870] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Thu Dec 01 23:00:52.218303 2022] [php:error] [pid 18] [client 172.19.0.2:46554] script '/var/www/html/products.php.php' not found or unable to stat
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.5. Set the 'ServerName' directive globally to suppress this message
+[Fri Dec 02 12:51:04.759323 2022] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.54 (Debian) PHP/8.0.26 configured -- resuming normal operations
+[Fri Dec 02 12:51:04.761828 2022] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Fri Dec 02 12:51:04.766803 2022] [dbd:error] [pid 21] (20014)Internal error (specific information not available): AH00629: Can't connect to mysql: Can't connect to MySQL server on 'db' (115)
+[Fri Dec 02 12:51:04.768694 2022] [dbd:error] [pid 21] (20014)Internal error (specific information not available): AH00633: failed to initialise
+[Fri Dec 02 12:51:04.766895 2022] [dbd:error] [pid 19] (20014)Internal error (specific information not available): AH00629: Can't connect to mysql: Can't connect to MySQL server on 'db' (115)
+[Fri Dec 02 12:51:04.771632 2022] [dbd:error] [pid 19] (20014)Internal error (specific information not available): AH00633: failed to initialise
+[Fri Dec 02 12:51:04.766997 2022] [dbd:error] [pid 18] (20014)Internal error (specific information not available): AH00629: Can't connect to mysql: Can't connect to MySQL server on 'db' (115)
+[Fri Dec 02 12:51:04.767024 2022] [dbd:error] [pid 20] (20014)Internal error (specific information not available): AH00629: Can't connect to mysql: Can't connect to MySQL server on 'db' (115)
+[Fri Dec 02 12:51:04.768207 2022] [dbd:error] [pid 17] (20014)Internal error (specific information not available): AH00629: Can't connect to mysql: Can't connect to MySQL server on 'db' (115)
+[Fri Dec 02 12:51:04.777566 2022] [dbd:error] [pid 17] (20014)Internal error (specific information not available): AH00633: failed to initialise
+[Fri Dec 02 12:51:04.770255 2022] [dbd:crit] [pid 21] (20014)Internal error (specific information not available): AH00636: child init failed!
+[Fri Dec 02 12:51:04.772689 2022] [dbd:crit] [pid 19] (20014)Internal error (specific information not available): AH00636: child init failed!
+[Fri Dec 02 12:51:04.775221 2022] [dbd:error] [pid 18] (20014)Internal error (specific information not available): AH00633: failed to initialise
+[Fri Dec 02 12:51:04.782422 2022] [dbd:crit] [pid 18] (20014)Internal error (specific information not available): AH00636: child init failed!
+[Fri Dec 02 12:51:04.776427 2022] [dbd:error] [pid 20] (20014)Internal error (specific information not available): AH00633: failed to initialise
+[Fri Dec 02 12:51:04.784497 2022] [dbd:crit] [pid 20] (20014)Internal error (specific information not available): AH00636: child init failed!
+[Fri Dec 02 12:51:04.778494 2022] [dbd:crit] [pid 17] (20014)Internal error (specific information not available): AH00636: child init failed!
+[Fri Dec 02 12:53:24.146258 2022] [core:alert] [pid 22] [client 172.19.0.3:51872] /var/www/html/.htaccess: <Directory not allowed here
+[Fri Dec 02 12:53:27.411108 2022] [core:alert] [pid 20] [client 172.19.0.3:51876] /var/www/html/.htaccess: <Directory not allowed here
+[Fri Dec 02 12:53:31.253654 2022] [core:alert] [pid 17] [client 172.19.0.3:36238] /var/www/html/.htaccess: <Directory not allowed here
+[Fri Dec 02 12:53:35.578059 2022] [core:alert] [pid 18] [client 172.19.0.3:36240] /var/www/html/.htaccess: <Directory not allowed here

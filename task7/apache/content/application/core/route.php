@@ -14,7 +14,10 @@ class Route
             $name = explode("?", $routes[1])[0];
             $controller_name = str_ends_with($name, ".php") ? substr($name, 0, -4) : $name;
         }
-
+        if(!empty($routes[2])) {
+            Route::ErrorPage404();
+            return;
+        }
 
         // добавляем префиксы
         $model_name = $controller_name;
