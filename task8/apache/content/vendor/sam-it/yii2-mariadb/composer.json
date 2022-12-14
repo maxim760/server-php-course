@@ -1,0 +1,65 @@
+{
+    "name": "sam-it/yii2-mariadb",
+    "description": "MariaDB Driver for Yii2",
+    "type": "yii2-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sam Mousa",
+            "email": "sam@mousa.nl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "SamIT\\Yii2\\MariaDb\\" : "src/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "vendor/yiisoft/yii2-dev/tests/data/ar"
+        ],
+        "psr-4": {
+            "SamIT\\Yii2\\MariaDb\\Tests\\": [
+                "tests/mariadb"
+            ]
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "require": {
+        "php": ">= 7.4",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
+        "yiisoft/yii2": "> 2.0.14"
+    },
+    "require-dev": {
+        "yiisoft/yii2-dev": "^2",
+        "phpunit/phpunit": "^9",
+        "symplify/easy-coding-standard": "^10.3"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "process-timeout": 1200,
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
+        }
+    },
+    "extra": {
+        "hooks": {
+            "pre-commit": [
+                "echo committing as $(git config user.name)",
+                "composer lint-fix",
+                "composer test"
+            ],
+            "commit-msg": [
+                "npx commitlint -e"
+            ]
+        }
+    }
+}
